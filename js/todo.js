@@ -47,7 +47,11 @@ export default class Todo {
     async deleteListItem(e){
         e.stopPropagation();
         const listItem = e.currentTarget.parentNode;
-        const dialog = new Dialog();
+        const dialog = new Dialog({
+            questionText:'<h2>Er du nu helt sikker?</h2>',
+            trueButtonText:'Jeps!',
+            falseButtonText:'No, nix nej.',
+        });
 
         const deleteItem = await dialog.confirm();
         if(deleteItem === true){
