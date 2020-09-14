@@ -32,7 +32,9 @@ export default class Todo {
     }
 
     deleteListItem(e){
-
+        e.stopPropagation();
+        const listItem = e.currentTarget.parentNode;
+        listItem.remove();
     }
 
 
